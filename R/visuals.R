@@ -111,8 +111,8 @@ some_tms_sites <- ggplot(tms_sites %>% filter(type %in% c("Continuous", "Nationa
 
 all_tms_sites + some_tms_sites
 
-example_tms_html <- htmlTable(example_tms_table, rnames = F)
-example_crash_html <- htmlTable(example_crash_table, rnames = F)
+#example_tms_html <- htmlTable(example_tms_table, rnames = F)
+#example_crash_html <- htmlTable(example_crash_table, rnames = F)
 
 
 all_sh_crashes <- ggplot(crashes) +
