@@ -5,7 +5,7 @@ CAS_FILE="datasets/Crash_Analysis_System_(CAS)_data.csv"
 TMS_FILE="datasets/Crash_Analysis_System_(CAS)_data.csv"
 TMS_SITES_FILE="datasets/State_highway_traffic_monitoring_sites.csv"
 REGION_FILE="datasets/statsnzregional-council-2019-clipped-generalised-CSV.zip"
-
+$REGION_FILE_2="datasets/statsnzregional-council-2019-generalised-CSV.zip"
 if [ ! -f "$CAS_FILE" ]; then
     echo "
 CAS File not found:
@@ -50,6 +50,20 @@ Zip file not found: $REGION_FILE => Please download the data first:
         - https://datafinder.stats.govt.nz/layer/98765-regional-council-2019-clipped-generalised/
     - Place the zip files in directory datasets in the current working tree.
     - mv ~/Downloads/statsnzregional-council-2019-clipped-generalised-CSV.zip datasets/statsnzregional-council-2019-clipped-generalised-CSV.zip
+    - Run ./bin/datasets.sh again
+    "
+fi
+
+unzip $REGION_FILE -d datasets
+
+if [ ! -f "$REGION_FILE_2" ]; then
+    echo "
+Zip file not found: $REGION_FILE_2 => Please download the data first:
+    - Create account at datafinder.stats.govt.nz if necessary.
+    - Navigate to the following URL for regional council definition, export to CSV with map projection EPSG:2193 and click 'Accept terms and create download':
+        - https://datafinder.stats.govt.nz/layer/98763-regional-council-2019-generalised/
+    - Place the zip files in directory datasets in the current working tree.
+    - mv ~/Downloads/statsnzregional-council-2019-generalised-CSV.zip datasets/statsnzregional-council-2019-generalised-CSV.zip
     - Run ./bin/datasets.sh again
     "
 fi

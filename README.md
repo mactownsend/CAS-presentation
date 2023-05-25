@@ -15,5 +15,10 @@ get the relevant datasets
 
 write the report
 
-`Rscript blah.R`
+`R`
+
+`install.packages("renv")`
+
+
+`Rscript R/visuals.R`
 
